@@ -8,6 +8,7 @@ import Lab5 from "./lab5.js";
 import CourseRoutes from "./courses/routes.js";
 import UserRoutes from "./users/routes.js";
 import cors from "cors";
+import ModuleRoutes from "./modules/routes.js";
 
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || "mongodb://127.0.0.1:27017/Kanbas"
 
@@ -40,6 +41,7 @@ app.use(express.json());
 
 UserRoutes(app);
 CourseRoutes(app);
+ModuleRoutes(app);
 Lab5(app);
 HelloRoutes(app);
 
