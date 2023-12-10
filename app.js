@@ -9,6 +9,8 @@ import CourseRoutes from "./courses/routes.js";
 import UserRoutes from "./users/routes.js";
 import cors from "cors";
 import ModuleRoutes from "./modules/routes.js";
+import FollowsRoutes from "./follows/routes.js";
+import LikesRoutes from "./likes/routes.js";
 
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || "mongodb://127.0.0.1:27017/Kanbas"
 
@@ -39,6 +41,8 @@ app.use(session(sessionOptions));
 
 app.use(express.json());
 
+LikesRoutes(app);
+FollowsRoutes(app);
 UserRoutes(app);
 CourseRoutes(app);
 ModuleRoutes(app);

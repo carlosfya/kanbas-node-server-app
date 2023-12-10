@@ -23,7 +23,6 @@ function UserRoutes(app) {
     res.json(user);
   };
   const createUser = async (req, res) => {
-    console.log("here we are:")
     const user = await dao.createUser(req.body);
     res.json(user);
   };
